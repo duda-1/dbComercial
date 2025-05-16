@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Core._03_Entidades
 {
-    class Endereco
+    public class Endereco
     {
         public int IdEndereco { get; set; }          // PRIMARY KEY, AUTO_INCREMENT
         public string CEP { get; set; }              // VARCHAR(8)
