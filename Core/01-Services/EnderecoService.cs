@@ -1,4 +1,5 @@
 ﻿using Core._01_Services.Interface;
+using Core._02_Repository;
 using Core._02_Repository.Interface;
 using Core._03_Entidades;
 using System;
@@ -18,34 +19,54 @@ namespace Core._01_Services
             _repository = repository;
         }
 
-        public void Adicionar(Endereco endereco)
+        //Adicionar
+        public async Task AdicionarEndereco(Endereco endereco)
         {
-            _repository.Adicionar(endereco);
+            // Chama o método de adicionar da repository
+            await _repository.AdicionarEndereco(endereco);
         }
 
-        public void Remover(int id)
+        //Listar
+        public async Task<IEnumerable<Endereco>> ListarEndereco()
         {
-            _repository.Remover(id);
+            return await _repository.ListarEndereco();
         }
 
-        public List<Endereco> Listar()
+        //Buscar por ID
+        public async Task<Endereco> BuscarEnderecoPorId(int id)
         {
-            return _repository.Listar();
+            // Chama o método assíncrono de buscar na repository
+            return await _repository.BuscarPorId(id);
         }
 
-        public Endereco BuscarEnderecoPorId(int id)
+        //Remover
+        public async Task RemoverEndereco(int id)
         {
-            return _repository.BuscarPorId(id);
+            // Chama o método de remoção da repository
+            await _repository.Remover(id);
         }
 
-        public List<Endereco> ListarPorCidade(string cidade)
+        //Editar
+        public async Task EditarEndereco(int idEndereco, Endereco endereco)
         {
-            return _repository.ListarPorCidade(cidade);
+            // Chama o método de buscar por ID
+            var enderecoExistente = await _repository.BuscarPorId(idEndereco);
+
+            if (enderecoExistente == null)
+            {
+                throw new Exception("Endereço não encontrado.");
+            }
+
+            // Chama o método de editar da repository
+            await _repository.Editar(endereco);
         }
 
-        public void Editar(Endereco endereco)
-        {
-            _repository.Editar(endereco);
-        }
+
+
+        //public List<Endereco> ListarPorCidade(string cidade)
+        //{
+        //    return _repository.ListarPorCidade(cidade);
+        //}
+
     }
 }

@@ -9,11 +9,12 @@ namespace Core._01_Services.Interface
 {
     public interface IEnderecoService
     {
-        public void Adicionar(Endereco endereco);
-        public void Remover(int id);
-        public List<Endereco> Listar();
-        public Endereco BuscarEnderecoPorId(int id);
-        public List<Endereco> ListarPorCidade(string cidade);
-        public void Editar(Endereco endereco);
+
+        public Task AdicionarEndereco(Endereco endereco);
+        public Task<IEnumerable<Endereco>> ListarEndereco();
+        public  Task<Endereco> BuscarEnderecoPorId(int id);
+        public  Task RemoverEndereco(int id);
+        public  Task EditarEndereco(int idEndereco,Endereco endereco);
+
     }
 }

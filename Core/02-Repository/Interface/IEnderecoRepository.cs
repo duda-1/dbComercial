@@ -9,11 +9,10 @@ namespace Core._02_Repository.Interface
 {
     public interface IEnderecoRepository
     {
-        public void Adicionar(Endereco endereco);
-        public void Remover(int id);
-        public void Editar(Endereco endereco);
-        public List<Endereco> Listar();
-        public Endereco BuscarPorId(int id);
-        public List<Endereco> ListarPorCidade(string cidade);
+        public  Task<Endereco> AdicionarEndereco(Endereco endereco);
+        public  Task<IEnumerable<Endereco>> ListarEndereco();
+        public Task Editar(Endereco endereco);
+        public  Task Remover(int id);
+        public  Task<Endereco> BuscarPorId(int id);
     }
 }

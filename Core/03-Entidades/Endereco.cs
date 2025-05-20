@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Dapper.Contrib.Extensions;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +11,9 @@ namespace Core._03_Entidades
 {
     public class Endereco
     {
+        [ExplicitKey]
         public int IdEndereco { get; set; }          // PRIMARY KEY, AUTO_INCREMENT
+
         public string CEP { get; set; }              // VARCHAR(8)
         public int? TipoVia { get; set; }            // INT(1), pode ser NULL
         public string NomeVia { get; set; }          // VARCHAR(45)
