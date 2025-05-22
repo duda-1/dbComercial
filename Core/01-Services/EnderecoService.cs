@@ -62,11 +62,5 @@ namespace Core._01_Services
         }
 
 
-
-        //public List<Endereco> ListarPorCidade(string cidade)
-        //{
-        //    return _repository.ListarPorCidade(cidade);
-        //}
-
     }
 }

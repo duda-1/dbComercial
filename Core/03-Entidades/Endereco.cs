@@ -9,9 +9,10 @@ using System.Threading.Tasks;
 
 namespace Core._03_Entidades
 {
+    [Dapper.Contrib.Extensions.Table("Endereco")]
     public class Endereco
     {
-        [ExplicitKey]
+        [Dapper.Contrib.Extensions.Key]
         public int IdEndereco { get; set; }          // PRIMARY KEY, AUTO_INCREMENT
 
         public string CEP { get; set; }              // VARCHAR(8)

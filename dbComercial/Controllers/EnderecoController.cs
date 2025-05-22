@@ -45,21 +45,6 @@ namespace Api.Controllers
         }
 
 
-        //[HttpGet("buscar-endereco-por-id")]
-        //public ActionResult<Endereco> BuscarPorId([FromQuery] int id)
-        //{
-        //    var endereco = _service.BuscarEnderecoPorId(id);
-        //    if (endereco == null)
-        //        return NotFound("Endereço não encontrado.");
-        //    return Ok(endereco);
-        //}
-
-        //[HttpGet("listar-por-cidade")]
-        //public ActionResult<List<Endereco>> ListarPorCidade([FromQuery] string cidade)
-        //{
-        //    var enderecos = _service.ListarPorCidade(cidade);
-        //    return Ok(enderecos);
-        //}
 
         //Editar
         [HttpPut("editar-endereco/{idEndereco}")]

@@ -41,8 +41,6 @@ namespace Core._02_Repository
                 UF = endereco.UF
             });
 
-            // Atribuindo o ID gerado ao objeto Endereco
-          // endereco.IdEndereco = IdEndereco;
 
             // Após a inserção, podemos retornar o objeto `Endereco` com os dados que foram inseridos.
             // O IdEndereco será gerado automaticamente pelo banco devido ao auto-incremento.
@@ -117,12 +115,6 @@ namespace Core._02_Repository
         }
 
 
-        //// Exemplo de método customizado: lista por cidade
-        //public List<Endereco> ListarPorCidade(string cidade)
-        //{
-        //    using var connection = new MySqlConnection(_connectionString);
-        //    var sql = "SELECT * FROM Enderecos WHERE Cidade = @Cidade";
-        //    return connection.Query<Endereco>(sql, new { Cidade = cidade }).ToList();
-        //}
+
     }
 }
