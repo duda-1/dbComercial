@@ -15,11 +15,7 @@ namespace Api.Controllers
         private readonly IMapper _mapper;
         private readonly IEnderecoService _service;
 
-        //public EnderecoController(IEnderecoService service, IMapper mapper)
-        //{
-        //    _service = service;
-        //    _mapper = mapper;
-        //}
+       
         public EnderecoController(IEnderecoService enderecoRepository)
         {
             _service=enderecoRepository;
