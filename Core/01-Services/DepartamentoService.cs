@@ -52,8 +52,12 @@ namespace Core._01_Services
                 throw new Exception("Departamento não encontrado.");
             }
 
+            // Atualiza o id do objeto para garantir que o repositório atualize o registro correto
+            departamento.idDepartamento = idDepartamento;
+
             await _repository.Editar(departamento);
         }
+
 
     }
 }

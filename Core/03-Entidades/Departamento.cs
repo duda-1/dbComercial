@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Core._03_Entidades
 {
-    [Table("Departamento")]
+    [Dapper.Contrib.Extensions.Table("Departamento")]
     public class Departamento
     {
-        [Key] // Como é chave primária auto-increment, usamos [Key]
+        [Dapper.Contrib.Extensions.Key] // Como é chave primária auto-increment, usamos [Key]
         public int idDepartamento { get; set; }          // INT, AUTO_INCREMENT, PK parcial
 
         public string NomeDepartamento { get; set; }     // VARCHAR(45), pode ser NULL
