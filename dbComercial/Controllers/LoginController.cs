@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Api.Controllers
 {
     [ApiController]
-    [Route("login")]
+    [Route("loginCliente")]
     public class LoginController : ControllerBase
     {
         private readonly IClienteService _clienteService;
